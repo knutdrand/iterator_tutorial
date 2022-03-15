@@ -40,6 +40,14 @@ def len_sum(sequences):
 
     return total
 
+
+def len_filter(sequences):
+    a_counts = []
+    for sequence in sequences:
+        if len(sequence) > 5:
+            a_counts.append(sequence.count("a"))
+    return a_counts
+
 def age_filter(sequences, ages):
     assert len(sequences) == len(ages)
     a_counts = []
@@ -47,5 +55,7 @@ def age_filter(sequences, ages):
         if ages[i]>=15:
             a_counts.append(sequences[i].count("a"))
     return a_counts
+
+
     
 

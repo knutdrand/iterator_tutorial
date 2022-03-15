@@ -28,5 +28,8 @@ def test_double(sequences):
 def test_sum(sequences):
     assert len_sum(sequences) == sum(len(s) for s in sequences)
 
+def test_filter(sequences):
+    assert len_filter(sequences) == [s.count("a") for s in sequences if len(s)>5]
+
 def test_zip(sequences, ages):
     assert age_filter(sequences, ages) == [s.count("a") for s, a in zip(sequences, ages) if a>=15]
