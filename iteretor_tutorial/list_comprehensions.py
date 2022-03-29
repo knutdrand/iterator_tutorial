@@ -9,6 +9,7 @@ def simple_loop(sequences):
         lengths.append(len(sequence))
     return lengths
 
+
 def double_loop(sequences):
     all_ascii_codes = []
     for sequence in sequences:
@@ -18,6 +19,7 @@ def double_loop(sequences):
         all_ascii_codes.append(ascii_codes)
     return all_ascii_codes
 
+
 def set_comprehension(sequences):
     alphabet = set([])
     for sequence in sequences:
@@ -26,13 +28,15 @@ def set_comprehension(sequences):
 
     return alphabet
 
+
 def two_operations(sequences):
     lens = []
-    for sequence in  sequences:
+    for sequence in sequences:
         adjusted_sequence = sequence.replace("a", "")
         lens.append(len(adjusted_sequence))
     return lens
-                    
+
+
 def len_sum(sequences):
     total = 0
     for sequence in sequences:
@@ -48,14 +52,11 @@ def len_filter(sequences):
             a_counts.append(sequence.count("a"))
     return a_counts
 
+
 def age_filter(sequences, ages):
     assert len(sequences) == len(ages)
     a_counts = []
     for i in range(len(sequences)):
-        if ages[i]>=15:
+        if ages[i] >= 15:
             a_counts.append(sequences[i].count("a"))
     return a_counts
-
-
-    
-
