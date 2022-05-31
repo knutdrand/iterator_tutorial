@@ -1,7 +1,8 @@
-
+import numpy as np
 # @pytest.fixture
 # def sequences():
 #    return ["agctctt", "tggtgta", "gcttagt", "aaaagtctgt"]
+
 
 def add_scalar(vector, number):
     """Add a scalar to a vector
@@ -111,3 +112,47 @@ def add_column_vector_to_matrix(matrix, column):
     """
     return [add_scalar(row, number) for
             row, number in zip(matrix, column)]
+
+
+def filter(vector: np.ndarray) -> np.ndarray:
+    """Filter elements lower than 3
+
+    Parameters
+    ----------
+    vector : np.ndarray
+        shape = (n,)
+
+    Returns
+    -------
+    np.ndarray
+        shape=(<=n, )
+
+    Examples
+    --------
+    >>> a = np.array([1, 2, 3, 4, 5, 6])
+    >>> filter(a)
+    [4, 5, 6]
+    """
+    return [v for v in vector if v > 3]
+
+
+def if_else(vector: np.ndarray) -> np.ndarray:
+    """Copies vector but sets elements lower than 3 to 0
+
+    Parameters
+    ----------
+    vector : np.ndarray
+        shape = (n, )
+
+    Returns
+    -------
+    np.ndarray
+        shape = (n, )
+
+    Examples
+    --------
+    >>> a = np.array([1, 2, 3, 4, 5, 6])
+    >>> if_else(a)
+    [0, 0, 0, 4, 5, 6]
+    """
+    return [v if v > 3 else 0 for v in vector]

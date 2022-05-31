@@ -11,6 +11,8 @@ from iteretor_tutorial.numpy_tutorial import (
     add_matrices,
     add_row_vector_to_matrix,
     add_column_vector_to_matrix,
+    filter,
+    if_else
 )
 
 
@@ -67,3 +69,15 @@ def test_matrix_plus_column(matrix, numbers):
     np.testing.assert_equal(
         add_column_vector_to_matrix(matrix, numbers),
         matrix+numbers[..., np.newaxis])
+
+
+def test_filter(numbers):
+    np.testing.assert_equal(
+        filter(numbers),
+        [v for v in numbers if v > 3])
+
+
+def test_if_else(numbers):
+    np.testing.assert_equal(
+        if_else(numbers),
+        [v if v > 3 else 0 for v in numbers])
