@@ -12,7 +12,8 @@ from iteretor_tutorial.numpy_tutorial import (
     add_row_vector_to_matrix,
     add_column_vector_to_matrix,
     filter,
-    if_else
+    if_else,
+    select_many,
 )
 
 
@@ -81,3 +82,9 @@ def test_if_else(numbers):
     np.testing.assert_equal(
         if_else(numbers),
         [v if v > 3 else 0 for v in numbers])
+
+
+def test_select_many(numbers):
+    np.testing.assert_equal(
+        select_many(numbers, [0, 2, 3]),
+        [10, 40, 30])

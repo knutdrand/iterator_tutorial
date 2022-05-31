@@ -156,3 +156,27 @@ def if_else(vector: np.ndarray) -> np.ndarray:
     [0, 0, 0, 4, 5, 6]
     """
     return [v if v > 3 else 0 for v in vector]
+
+
+def select_many(vector: np.ndarray, indices: list) -> np.ndarray:
+    """Select elements from indices
+
+    Parameters
+    ----------
+    vector : np.ndarray
+        shape = (n, )
+    indices : list
+        shape= (m, )
+
+    Returns
+    -------
+    np.ndarray
+        shape= (m, )
+
+    Examples
+    --------
+    >>> a = np.array([1, 2, 3, 4, 5, 6])
+    >>> select_many(a, [0, 3, 4])
+    [1, 4, 5]
+    """
+    return [vector[i] for i in indices]
