@@ -33,7 +33,7 @@ def test_max_value():
     assert max_of_function(func) == max(func(x, y) for x, y in product(range(100), repeat=2))
 
 def test_location_from_steps(ages):
-    assert list(location_from_steps(ages, start=3)) == list(accumulate(ages, initial=3))
 
+    assert list(location_from_steps(ages, start=3)) == list(accumulate(ages, initial=3))
 def test_comment(lines):
     assert list(read_numbers(lines)) == list(int(line) for line in dropwhile(lambda line: line.startswith("#"), lines))
